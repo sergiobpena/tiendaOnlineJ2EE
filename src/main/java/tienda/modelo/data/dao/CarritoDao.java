@@ -1,4 +1,4 @@
-package tienda.modelo;
+package tienda.modelo.data.dao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -7,6 +7,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import tienda.modelo.CarritoCollections;
+import tienda.modelo.Producto;
 import tienda.modelo.exception.CarritoLlenoException;
 
 

@@ -1,4 +1,8 @@
-package tienda.modelo;
+package tienda.modelo.data.dao;
+
+import tienda.modelo.Libro;
+import tienda.modelo.Pelicula;
+import tienda.modelo.Producto;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

@@ -1,4 +1,4 @@
-package tienda.modelo;
+package tienda.modelo.data.dao;
 
 import java.sql.Connection;
 import java.sql.Date;
@@ -8,6 +8,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Calendar;
 
+import tienda.modelo.Cliente;
+import tienda.modelo.Dni;
 import tienda.modelo.exception.LetraDniIncorrectaException;
 
 public class ClienteDao {

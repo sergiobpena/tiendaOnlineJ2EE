@@ -1,20 +1,14 @@
 package tienda.modelo;
 
-import java.io.EOFException;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
+import tienda.modelo.data.dao.CarritoDao;
+import tienda.modelo.data.dao.ClienteDao;
+import tienda.modelo.data.dao.ProductoDAO;
 import tienda.modelo.exception.CarritoLlenoException;
 import tienda.modelo.exception.LetraDniIncorrectaException;
 
