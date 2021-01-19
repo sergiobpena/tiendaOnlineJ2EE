@@ -9,7 +9,7 @@
 	</head>
 	<body>
 		<h2>ERRORES</h2>
-		<div style="font: red 20 px ;">
+		<div>
 			<c:out value="${requestScope.mensajeError}"/>
 		</div>
 	</body>
