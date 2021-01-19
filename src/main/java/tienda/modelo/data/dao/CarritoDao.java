@@ -17,7 +17,7 @@ public class CarritoDao {
 
     private Connection connection;
     private static final String CREAR_CARRITO = "INSERT INTO Carrito VALUES()";
-    private static final String BUSCAR_CARRITO = "select * from detallescarrito dc join producto p on dc.idproducto=p.idproducto where DC.idCarrito=?";
+    private static final String BUSCAR_CARRITO = "select * from DetallesCarrito dc join Producto p on dc.idproducto=p.idproducto where dc.idCarrito=?";
 
 
     public CarritoDao() {

@@ -18,8 +18,8 @@ import java.util.List;
 public class ProductoDAO {
 
 	private Connection connection;
-	private static final String CONSULTA_LIBROS="select * from producto p join libro l on p.idProducto = l.idproducto";
-	private static final String CONSULTA_PELICULAS="select * from producto p join pelicula pel on p.idProducto = pel.idproducto";
+	private static final String CONSULTA_LIBROS="select * from Producto p join Libro l on p.idProducto = l.idproducto";
+	private static final String CONSULTA_PELICULAS="select * from Producto p join Pelicula pel on p.idProducto = pel.idproducto";
 	
 	public ProductoDAO () {
 		this.connection= ConexionBD.getConexionDB().getConexion();
