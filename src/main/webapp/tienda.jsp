@@ -41,8 +41,8 @@
 					<tr>
 						<td><c:out value="${p.titulo }"/></td>
 						<td><c:out value="${p.genero }"/></td>
-<%-- 						<td><c:out value="${p.precio }"/></td> --%>
-						<td><fmt:formatNumber maxFractionDigits="2" currencyCode="$" value="${p.precio}"/></td>
+<%-- 						<td><c:out value="${p.precio }"/></td>--%>
+						<td><fmt:formatNumber maxFractionDigits="2" type="number" currencyCode="$" value="${p.precio}"/></td>
 						<td><c:out value="${p.anho }"/></td>
 <%-- 						<td><a href="anadirCarrito?productoId=${p.idProducto }">Añadir al Carrito</a></td> --%>
 						<c:url var="urlAnadirCarrito" value="anadirCarrito">

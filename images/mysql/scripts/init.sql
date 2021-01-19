@@ -49,6 +49,7 @@ CREATE TABLE DetallesCarrito(
 	idDetalle INT AUTO_INCREMENT,
 	idCarrito INT,
 	idProducto INT,
+    cantidad INT ,
 	CONSTRAINT PK_DETALLESCARRITO PRIMARY KEY (idDetalle),
 	CONSTRAINT FK_DETALLES_CARRITO FOREIGN KEY (idCarrito) REFERENCES Carrito (idCarrito)
 		ON DELETE SET NULL ON UPDATE CASCADE, 
@@ -78,29 +79,28 @@ CREATE TABLE Pelicula(
 		
 )engine=InnoDB;
 -- ALTER TABLE DetallesCarrito ADD COLUMN cantidad INT;
+-- LIBROS
+INSERT INTO Producto (titulo, precio, anho , genero) VALUES ('O extranxeiro','10.3',1942,'Terror');
+INSERT INTO Libro VALUES (1,'Albert Camus','ABCDEF');
+INSERT INTO Producto (titulo, precio, anho , genero) VALUES ('A Esmorga',11.8,1970,'Novela');
+INSERT INTO Libro VALUES (2,'E.Blanco Amor','XX1XX');
 
-INSERT INTO Producto (titulo, precio, anho , genero) VALUES ('Titulo 1','10.3','1980','Terror');
-INSERT INTO Libro VALUES (1,'Autor 1','ABCDEF');
-INSERT INTO Producto (titulo, precio, anho , genero) VALUES ('Titulo 2',11.8,1970,NULL);
-INSERT INTO Libro VALUES (2,'Autor 2','ABCDEG');
+INSERT INTO Producto (titulo, precio, anho , genero) VALUES ('El señor de las moscas',29.30,1954,'Ficcion');
+INSERT INTO Libro VALUES (3,'William Golding','PPPTTTT');
 
-INSERT INTO Producto (titulo, precio, anho , genero) VALUES ('Titulo 3',29.30,2013,NULL);
-INSERT INTO Libro VALUES (3,'Director 1','Actriz 1');
+INSERT INTO Producto (titulo, precio, anho , genero) VALUES ('La conjura de los necios',40.10,1980,'Ficcion');
+INSERT INTO Libro VALUES (4,'John Kennedy Toole','KKKKKKKK');
+-- PELICULAS
 
-INSERT INTO Producto (titulo, precio, anho , genero) VALUES ('Titulo 4',40.10,2017,'Belica');
-INSERT INTO Libro VALUES (4,'Director 2','Actor 1');
+INSERT INTO Producto(titulo, precio, anho, genero) VALUES ('Apocalypse Now',25.30,1969,'Belica');
+INSERT INTO Pelicula(idProducto, directo, reparto) VALUES (5,'Francis Coppola','Martin Sheen , Marlon Brando');
 
-UPDATE Producto SET titulo = 'Libro 1'
-WHERE idProducto= 1 ;
+INSERT INTO Producto(titulo, precio, anho, genero) VALUES ('El discreto encanto de la burguesía',19.90,1972,'Surrealismo');
+INSERT INTO Pelicula(idProducto, directo, reparto) VALUES (6,'Luis Buñuel','Fernando Rey, Paul Frankeur');
 
-UPDATE Producto SET titulo = 'Libro 2'
-WHERE idProducto= 2;
+INSERT INTO Producto(titulo, precio, anho, genero) VALUES ('Lock & Stock',25.30,1998,'Comedia');
+INSERT INTO Pelicula(idProducto, directo, reparto) VALUES (7,'Guy Ritchie','Nick Moran, Jason Flemyng, Jason Statham');
 
-UPDATE Producto SET titulo = 'Pelicula 1'
-WHERE idProducto= 3;
-
-UPDATE Producto SET titulo = 'Pelicula 2'
-WHERE idProducto = 4;
-
-
+INSERT INTO Producto(titulo, precio, anho, genero) VALUES ('Los santos inocentes',30.01,1984,'Drama');
+INSERT INTO Pelicula(idProducto, directo, reparto) VALUES (8,'Mario Camus','Alfredo Landa, Francisco Rabal');
 
