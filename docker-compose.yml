@@ -1,0 +1,25 @@
+version: '3.1'
+
+services:
+
+  db:
+    image: mysql
+    container_name: bb_dd_jee
+    #    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    volumes:
+      - "./images/mysql/scripts/init.sql:/docker-entrypoint-initdb.d/1.sql"
+      - "./images/mysql/db:/var/lib/mysql"
+    ports:
+      - 3307:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+      MYSQL_USER : user
+      MYSQL_PASSWORD : abc123..
+
+  adminer:
+    image: adminer
+    container_name: bb_dd_jee_admin
+    restart: always
+    ports:
+      - 9595:8080
