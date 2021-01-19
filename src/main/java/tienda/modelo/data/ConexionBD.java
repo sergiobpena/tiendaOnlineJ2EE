@@ -10,6 +10,7 @@ import java.sql.SQLException;
 
 public class ConexionBD {
 
+    static Logger log = Logger.getLogger(ConexionBD.class.getName());
 
     private static ConexionBD conexionDB;
     private Connection conexion;
@@ -24,10 +25,10 @@ public class ConexionBD {
             this.conexion= DriverManager.getConnection("jdbc:mysql://" + dbSettings.getHost() + ":"
                     +dbSettings.getPort()+"/"+dbSettings.getDb(),dbSettings.getUser(),dbSettings.getPass());
 //            this.conexion.setAutoCommit(false);
-            System.out.println("Conexion realizada");
+            log.info("Conexion bd realizada");
 
         }catch (SQLException e){
-            System.out.println("Non se realizou conexion");
+            log.error("Non se puido establecer conexion con bd");
             e.printStackTrace();
         }
     }
@@ -37,7 +38,7 @@ public class ConexionBD {
         try{
             if(this.conexion!=null){
                 this.conexion.close();
-                System.out.println("Conexion pechada");
+                log.info("Desconexion con bd");
             }
         }catch (SQLException e){
             e.printStackTrace();
@@ -45,7 +46,7 @@ public class ConexionBD {
     }
 
 
-    public static ConexionBD getConexionDB (String ruta){
+    public static ConexionBD getConexionDB (){
         if(conexionDB == null){
             conexionDB=new ConexionBD();
         }

@@ -3,6 +3,7 @@ package tienda.modelo.data.dao;
 import tienda.modelo.Libro;
 import tienda.modelo.Pelicula;
 import tienda.modelo.Producto;
+import tienda.modelo.data.ConexionBD;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -15,24 +16,18 @@ import java.util.List;
 
 
 public class ProductoDAO {
-	
-	private static final String DRIVER_CLASS="com.mysql.jdbc.Driver";
-	private final String CONNECTIO_URL="jdbc:mysql://localhost/curso?user=root";
+
+	private Connection connection;
 	private static final String CONSULTA_LIBROS="select * from producto p join libro l on p.idProducto = l.idproducto";
 	private static final String CONSULTA_PELICULAS="select * from producto p join pelicula pel on p.idProducto = pel.idproducto";
 	
 	public ProductoDAO () {
-		try {
-			Class.forName(DRIVER_CLASS);
-		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		this.connection= ConexionBD.getConexionDB().getConexion();
 	}
 
 	public List<Producto> buscarTodos() throws SQLException {
-		try (Connection connection = DriverManager.getConnection(CONNECTIO_URL);
-			PreparedStatement statement = connection.prepareStatement(CONSULTA_LIBROS);) {
+
+			PreparedStatement statement = connection.prepareStatement(CONSULTA_LIBROS);
 			List<Producto> lista = new ArrayList<>();
 			ResultSet resultadoLibros = statement.executeQuery(CONSULTA_LIBROS);
 			while (resultadoLibros.next()) {
@@ -59,7 +54,7 @@ public class ProductoDAO {
 				lista.add(p);
 			}
 			return lista;
-		} 
+
 
 	}
 	
